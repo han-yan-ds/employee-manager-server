@@ -1,0 +1,27 @@
+{
+  "name": "pizzapie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/han-yan-ds/PizzaPie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/han-yan-ds/PizzaPie/issues"
+  },
+  "homepage": "https://github.com/han-yan-ds/PizzaPie#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.20.10",
+    "path": "^0.12.7"
+  }
+}
