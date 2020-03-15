@@ -16,7 +16,7 @@ exports.postEmployee = (body) => new Promise(async (resolve, reject) => {
     const newEmployee = await knex('employees').insert({
       uuid,
       firstname,
-      middlename,
+      middlename: middlename || null,
       lastname,
       dob,
       doe,
@@ -25,6 +25,21 @@ exports.postEmployee = (body) => new Promise(async (resolve, reject) => {
     resolve(newEmployee);
   } catch (err) {
     reject(`Error with adding employee ${firstname} ${lastname} to database`)
+  }
+});
+
+exports.patchEmployee = (body) => new Promise(async (resolve, reject) => {
+  /**
+   * body MUST have uuid
+   * body can have other fields
+   */
+  try {
+    const {uuid, ...updatedFields} = body;
+    const updatedEmployee = await knex('employees').where({uuid})
+    .update(updatedFields).returning('*');
+    resolve(updatedEmployee);
+  } catch (err) {
+    reject(`Error with updating employee with ID=${uuid}`);
   }
 });
 
