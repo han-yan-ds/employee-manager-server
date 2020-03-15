@@ -1,6 +1,7 @@
 const {
   getEmployees, 
-  postEmployee
+  postEmployee,
+  deleteEmployee
 } = require('../models/employeeModel');
 
 exports.getEmployeeController = async (req, res) => {
@@ -8,8 +9,8 @@ exports.getEmployeeController = async (req, res) => {
 }
 
 exports.postEmployeeController = async (req, res) => {
-  await postEmployee(req.body);
-  res.json(await getEmployees());
+  res.json(await postEmployee(req.body)); // returns new employee after adding new
+  // res.json(await getEmployees()); // returns all employees after adding new
 }
 
 exports.patchEmployeeController = async (req, res) => {
@@ -17,5 +18,6 @@ exports.patchEmployeeController = async (req, res) => {
 }
 
 exports.deleteEmployeeController = async (req, res) => {
-  
+  res.json(await deleteEmployee(req.body.uuid)); // returns removed employee after removing
+  // res.json(await getEmployees()); // returns all employees after deleting
 }

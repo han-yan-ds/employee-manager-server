@@ -27,3 +27,12 @@ exports.postEmployee = (body) => new Promise(async (resolve, reject) => {
     reject(`Error with adding employee ${firstname} ${lastname} to database`)
   }
 });
+
+exports.deleteEmployee = (uuid) => new Promise(async (resolve, reject) => {
+  try {
+    const removedEmployee = await knex('employees').where({uuid}).delete().returning('*');
+    resolve(removedEmployee);
+  } catch (err) {
+    reject(`Error with deleting employee with ID=${uuid} from database`)
+  }
+});
