@@ -8,12 +8,11 @@ exports.getEmployeeController = async (req, res) => {
 }
 
 exports.postEmployeeController = async (req, res) => {
-  // res.send(await postEmployee(req.body));
-  res.send('MESSAGE');
+  res.json(await postEmployee(req.body));
 }
 
 exports.patchEmployeeController = async (req, res) => {
-  
+  res.send('MESSAGE');
 }
 
 exports.deleteEmployeeController = async (req, res) => {
