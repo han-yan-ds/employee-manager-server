@@ -13,7 +13,7 @@ exports.getEmployees = () => new Promise(async (resolve, reject) => {
 exports.postEmployee = (body) => new Promise(async (resolve, reject) => {
   const {uuid, firstname, middlename, lastname, dob, doe, active} = body;
   try {
-    await knex('employees').insert({
+    const newEmployee = await knex('employees').insert({
       uuid,
       firstname,
       middlename,
@@ -21,8 +21,8 @@ exports.postEmployee = (body) => new Promise(async (resolve, reject) => {
       dob,
       doe,
       active
-    });
-    resolve(await this.getEmployees());
+    }).returning('*');
+    resolve(newEmployee);
   } catch (err) {
     reject(`Error with adding employee ${firstname} ${lastname} to database`)
   }
