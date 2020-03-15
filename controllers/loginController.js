@@ -1,4 +1,4 @@
-const {login} = require('../models/getModel');
+const {login} = require('../models/loginModel');
 
 exports.loginController = async (req, res) => {
   /**
