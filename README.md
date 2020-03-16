@@ -2,12 +2,6 @@
 
 To run this server:
 
-  - Install docker if it's not installed already
-
-    `sudo apt-get install docker docker.io docker-compose`
-  - Check that docker is installed
-
-    `docker --version`
   - Fork and clone this repo
 
     `FORK FIRST`
@@ -17,12 +11,12 @@ To run this server:
   - Navigate to the main directory
 
     `cd <where you cloned the repo>`
-  - Run docker-compose up
+  - Install all required packages
 
-    `docker-compose up`
+    `npm install`
 
-  - Test with Postman (`GET 172.17.0.2:9001/employees`)
+  - Run the server
 
-  - TO SHUT IT DOWN: Run docker-compose down
+    `npm start`
 
-    `docker-compose down`
+  - Test with Postman (`GET localhost:9001/employees`)
