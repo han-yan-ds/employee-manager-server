@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  employeemanagerserver: # service name... image will be dirName_serviceName
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: employeemanagerserver:tag
+    ports:
+    - "9001:9001" 
+    # first port is my machine; second port is machine on Docker (exposed on Dockerfile)
+    #   assuming docker's IP is 172.25.0.2 (got from docker inspect <containerName>)
+    # this maps localhost:5000 to 172.25.0.2:3000
+    #   check Postman to see they do the same thing
+    command: npm start
