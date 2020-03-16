@@ -1,5 +1,5 @@
 {
-  "name": "pizzapie",
+  "name": "employee-manager-server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/han-yan-ds/PizzaPie.git"
+    "url": "git+https://github.com/han-yan-ds/employee-manager-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/han-yan-ds/PizzaPie/issues"
+    "url": "https://github.com/han-yan-ds/employee-manager-server/issues"
   },
-  "homepage": "https://github.com/han-yan-ds/PizzaPie#readme",
+  "homepage": "https://github.com/han-yan-ds/employee-manager-server#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
